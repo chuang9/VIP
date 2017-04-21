@@ -5,7 +5,7 @@
 
 import java.util.*;
 public class ArrayPriorityQueue implements PriorityQueue {
-    private ArrayList<Integer> _data = new ArrayList<>();
+    private ArrayList<Ticket> _data = new ArrayList<>();
     public void add(Integer str) {
 	if (isEmpty())
 	    _data.add(str);
@@ -37,11 +37,11 @@ public class ArrayPriorityQueue implements PriorityQueue {
 	return _data.size() == 0; 
     }
 
-    public Integer peekMin() {
+    public Ticket peekMin() {
 	return isEmpty() ? null :  _data.get(0);
     }
 
-    public Integer removeMin() {
+    public Ticket removeMin() {
 	return isEmpty() ? null : _data.remove(0);
     }
 
