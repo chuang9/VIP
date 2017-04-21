@@ -1,10 +1,10 @@
-## VIP
+# VIP
 Team VIP (Chester Huang, Irene Lam, Jason Lam)
 
-# Class HelpDesk
+## Class HelpDesk
 Uses class Ticket to provide various features
 
-# Method Explanations in Ticket
+## Method Explanations in Ticket
 
 1. boolean isSolved() - returns whether the problem of Ticket is solved
 2. int getID() - returns the unique ID of the Ticket
