@@ -60,4 +60,10 @@ public class Ticket implements Comparable {
 	return solved;
     }
 
+    //toString for Ticket
+    public String toString() {
+        String retStr = "";
+        retStr += "\n" + name + "(ID:" + ID + ")\nProblem: " + problem + "\nSolution: " + solution + "\n";
+        return retStr;
+    }
 }
