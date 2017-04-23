@@ -27,6 +27,7 @@ public class Ticket implements Comparable {
     //Mutator method for solution	
     public void setSolution(String newSolution) {
 	    solution = newSolution;
+	    solved = true;
     }
 
     //Accessor method for ID	
