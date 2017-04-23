@@ -12,11 +12,13 @@ public class HelpDesk {
     //Instance Variables
     private ArrayPriorityQueue _data; //Queue of all tickets that have yet to be processed
     private ArrayList<Integer> _ID; //List of all ID's (to ensure a unique ID)
+    private ArrayList<Ticket> _solvedData; //List of all solved tickets
     
     //Constructor
 	public HelpDesk() {
 	    _data = new ArrayPriorityQueue();
 	    _ID = new ArrayList<>();
+            _solvedData = new ArrayList<Ticket>();
 	}
     
     public void addTicket() {
@@ -62,9 +64,9 @@ public class HelpDesk {
 	    String solution = Keyboard.readString();
 	    workingTic.setSolution(solution);
 	    
-	    //Removing ticket from queue
-	    _data.removeMin();
-	    
+	    //Removing ticket from queue and add it to list of solved
+	    _solvedData.add(_data.removeMin());
+            
 	    //Keeping up relations with the employee
 	    System.out.println("Your solution has been added. Thank you for your hard work!");
 		}
@@ -81,5 +83,8 @@ public class HelpDesk {
 	System.out.println(hd._data);
 	
 	hd.solveTicket();
+        hd.solveTicket();
+
+        System.out.println("\nList of solved:\n" + hd._solvedData);
     }
 }
