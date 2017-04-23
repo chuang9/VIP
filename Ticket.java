@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Ticket implements Comparable {
+public class Ticket implements Comparable<Ticket> {
     
     private int ID;
     private int VIPLevel;
@@ -20,8 +20,8 @@ public class Ticket implements Comparable {
     }
 
     //Compare method to gauge importance of two Tickets	
-    public int compareTo(Object otherTick) {
-	return VIPLevel - ((Ticket) otherTick).getVIP();
+    public int compareTo(Ticket otherTick) {
+	return VIPLevel - otherTick.getVIP();
     }
 	
     //Mutator method for solution	
@@ -63,7 +63,7 @@ public class Ticket implements Comparable {
     //toString for Ticket
     public String toString() {
         String retStr = "";
-        retStr += "\n" + name + "(ID:" + ID + ")\nProblem: " + problem + "\nSolution: " + solution + "\n";
+        retStr += "\n" + name + "(ID:" + ID + " VIPLevel:" + VIPLevel + ")\nProblem: " + problem + "\nSolution: " + solution + "\n";
         return retStr;
     }
 }

@@ -5,10 +5,10 @@
 
 import java.util.*;
 
-public class ArrayPriorityQueue implements PriorityQueue {
-    private ArrayList<Ticket> _data = new ArrayList<>();
+public class ArrayPriorityQueue<T extends Comparable<T>> implements PriorityQueue<T> {
+    private ArrayList<T> _data = new ArrayList<>();
     
-    public void add(Ticket str) {
+    public void add(T str) {
 	//int newID, int priority, String newUser, String newProblem
 	if (isEmpty())
 	    _data.add(str);
@@ -43,18 +43,18 @@ public class ArrayPriorityQueue implements PriorityQueue {
 	return _data.size() == 0;
     }
     
-    public Ticket peekMin() {
+    public T peekMin() {
 	return isEmpty() ? null : _data.get(0);
     }
     
-    public Ticket removeMin() {
-		return isEmpty() ? null : _data.remove(0);
+    public T removeMin() {
+        return isEmpty() ? null : _data.remove(0);
     }
     
     public String toString() {
 	String ans = "";
-	for (Ticket i : _data)
-	    ans += i.getName() + "(ID:" + i.getID() + ", VIP:" + i.getVIP() + ")\nProblem: " + i.getProblem() + "\n\n";
+	for (T i : _data)
+	    ans += i;
 	return ans;
     }
     

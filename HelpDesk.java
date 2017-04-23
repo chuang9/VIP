@@ -10,14 +10,14 @@ import java.util.*;
 
 public class HelpDesk {
     //Instance Variables
-    private ArrayPriorityQueue _data; //Queue of all tickets that have yet to be processed
+    private ArrayPriorityQueue<Ticket> _data; //Queue of all tickets that have yet to be processed
     private ArrayList<Integer> _ID; //List of all ID's (to ensure a unique ID)
     private ArrayList<Ticket> _solvedData; //List of all solved tickets
     
     //Constructor
 	public HelpDesk() {
-	    _data = new ArrayPriorityQueue();
-	    _ID = new ArrayList<>();
+	    _data = new ArrayPriorityQueue<Ticket>();
+	    _ID = new ArrayList<Integer>();
             _solvedData = new ArrayList<Ticket>();
 	}
     

@@ -1,11 +1,11 @@
-public interface PriorityQueue {
+public interface PriorityQueue<T extends Comparable<T>> {
 
-    public void add(Ticket x);
+    public void add(T x);
     
     public boolean isEmpty();
     
-    public Ticket peekMin();
+    public T peekMin();
     
-    public Ticket removeMin();
+    public T removeMin();
 
 }
